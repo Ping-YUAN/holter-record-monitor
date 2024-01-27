@@ -6,7 +6,7 @@
 
 This is a monitor screen that doctor can check the ECG data for the patient.
 Doctor can choose any patient and get the summary from the csv file.
-![demo](./asset/demo.gif)
+![demo](./asset/holter-demo.gif)
 
 ## Start the app
 
@@ -35,6 +35,10 @@ In the backend we have 3 endpoint
 
 csv file structure:
 type | waveOn | waveEnd | tags
+
+Time format:
+Since in ECG data millesecond is wild used to measure the wave. So in our system, we save data as millesecond number.
+It can be easily filter in database or calculate during the runing time. And also the ECG data normally should be based on the current time which means time greater than 1970. So with millesecond data it is enough for us in current situation.
 
 On the client side.
 
