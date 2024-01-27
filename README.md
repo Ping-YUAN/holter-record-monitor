@@ -25,6 +25,10 @@ Here to play it on your own with postman:
 
 Project implemented with Angular17 nestjs10, node version : 18.18.2
 
+## Terms
+
+Heart Rate: the way we calculate the heart rate is to count the number of QRS wave in one minutes. Thus except the average heart rate, other heart rate means the heart rate of the minute according to thegiven time.
+
 ## Architecture
 
 In the backend we have 3 endpoint
