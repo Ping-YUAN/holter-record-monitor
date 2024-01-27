@@ -6,6 +6,7 @@
     "declaration": false,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
+    "noImplicitAny": false,
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "es2015",
@@ -14,7 +15,17 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@holter-record-api": ["libs/holter-record-api/src/index.ts"],
+      "@holter-record-filter": ["libs/holter-record-filter/src/index.ts"],
+      "@holter-record-main-section": [
+        "libs/holter-record-main-section/src/index.ts"
+      ],
+      "@holter-record-monitor-nav": [
+        "libs/holter-record-monitor-nav/src/index.ts"
+      ],
+      "@holter-service": ["libs/holter-service/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

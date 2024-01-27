@@ -1,0 +1,26 @@
+<form [formGroup]="patientForm">
+  <div>
+    <mat-form-field>
+      <mat-label>Patients</mat-label>
+      <mat-select formControlName="patient" name="patient">
+        <mat-option>None</mat-option>
+        @for (patient of patients; track patient.id) {
+        <mat-option [value]="patient.id"
+          >{{ patient.patientName }}
+          <mat-label>{{ !patient.read ? 'new' : '' }}</mat-label>
+        </mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+    @if (hasNewData) {
+    <mat-label>New Data Arrive!</mat-label>
+    }
+  </div>
+
+  <!--
+        other filter component can be loaded here 
+    -->
+  <mat-label style="right: 0px"
+    >Time range component to be implement here.</mat-label
+  >
+</form>

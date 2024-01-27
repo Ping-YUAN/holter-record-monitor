@@ -1,0 +1,20 @@
+<holter-record-feature-card
+  [featureName]="'Averge Heart Rate'"
+  [featureNumber]="
+    (patientObservable$ | async)?.avgHeartRate?.toFixed(0)?.toString()
+  "
+></holter-record-feature-card>
+<holter-record-feature-card
+  [featureName]="'Min Heart Rate'"
+  [featureNumber]="
+    (patientObservable$ | async)?.minHeartRate?.toFixed(0)?.toString()
+  "
+  [featureTime]="(patientObservable$ | async)?.minHeartRateTime"
+></holter-record-feature-card>
+<holter-record-feature-card
+  [featureName]="'Max Heart Rate'"
+  [featureNumber]="
+    (patientObservable$ | async)?.maxHeartRate?.toFixed(0)?.toString()
+  "
+  [featureTime]="(patientObservable$ | async)?.maxHeartRateTime"
+></holter-record-feature-card>

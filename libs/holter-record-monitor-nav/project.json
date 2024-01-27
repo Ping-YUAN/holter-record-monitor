@@ -1,0 +1,21 @@
+{
+  "name": "holter-record-monitor-nav",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/holter-record-monitor-nav/src",
+  "prefix": "holter-record-monitor",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/holter-record-monitor-nav/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    }
+  }
+}

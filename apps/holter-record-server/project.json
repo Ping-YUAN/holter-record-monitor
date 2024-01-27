@@ -1,0 +1,53 @@
+{
+  "name": "holter-record-server",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/holter-record-server/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/holter-record-server",
+        "main": "apps/holter-record-server/src/main.ts",
+        "tsConfig": "apps/holter-record-server/tsconfig.app.json",
+        "assets": ["apps/holter-record-server/src/assets"],
+        "webpackConfig": "apps/holter-record-server/webpack.config.js"
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "holter-record-server:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "holter-record-server:build:development"
+        },
+        "production": {
+          "buildTarget": "holter-record-server:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/holter-record-server/jest.config.ts"
+      }
+    }
+  },
+  "tags": []
+}

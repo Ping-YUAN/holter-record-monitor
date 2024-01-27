@@ -1,0 +1,19 @@
+:host,
+holter-record-monitor-nav {
+  max-height: 56px;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: space-around;
+  justify-content: space-around;
+  mat-toolbar {
+    max-height: 56px;
+    height: 100%;
+
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+    place-content: center space-between;
+    align-items: center;
+  }
+}
