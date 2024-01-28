@@ -1,20 +1,35 @@
-<holter-record-feature-card
-  [featureName]="'Averge Heart Rate'"
-  [featureNumber]="
-    (patientObservable$ | async)?.avgHeartRate?.toFixed(0)?.toString()
-  "
-></holter-record-feature-card>
-<holter-record-feature-card
-  [featureName]="'Min Heart Rate'"
-  [featureNumber]="
-    (patientObservable$ | async)?.minHeartRate?.toFixed(0)?.toString()
-  "
-  [featureTime]="(patientObservable$ | async)?.minHeartRateTime"
-></holter-record-feature-card>
-<holter-record-feature-card
-  [featureName]="'Max Heart Rate'"
-  [featureNumber]="
-    (patientObservable$ | async)?.maxHeartRate?.toFixed(0)?.toString()
-  "
-  [featureTime]="(patientObservable$ | async)?.maxHeartRateTime"
-></holter-record-feature-card>
+<div class="holter-record-main-section">
+  <div class="holter-record-main-section-left">
+    <div class="holter-record-overview-cards">
+      <holter-record-feature-card
+        [featureName]="'Averge Heart Rate'"
+        [featureNumber]="
+          (patientObservable$ | async)?.avgHeartRate?.toFixed(0)?.toString()
+        "
+        [featureTime]="'All time'"
+      ></holter-record-feature-card>
+      <holter-record-feature-card
+        [featureName]="'Min Heart Rate'"
+        [featureNumber]="
+          (patientObservable$ | async)?.minHeartRate?.toFixed(0)?.toString()
+        "
+        [featureTime]="(patientObservable$ | async)?.minHeartRateTime"
+      ></holter-record-feature-card>
+      <holter-record-feature-card
+        [featureName]="'Max Heart Rate'"
+        [featureNumber]="
+          (patientObservable$ | async)?.maxHeartRate?.toFixed(0)?.toString()
+        "
+        [featureTime]="(patientObservable$ | async)?.maxHeartRateTime"
+      ></holter-record-feature-card>
+    </div>
+    <holter-record-heart-rate-chart
+      [heartRateHistory]="history()"
+    ></holter-record-heart-rate-chart>
+  </div>
+  <div class="holter-record-main-section-exception">
+    <holter-record-exception-list
+      [exceptions]="exceptions()"
+    ></holter-record-exception-list>
+  </div>
+</div>

@@ -2,7 +2,7 @@
   <mat-card-content>
     <div class="holter-card-item">
       <span class="holter-card-text">{{ featureNumber }}</span>
-      @if (featureTime) {
+      @if ( featureNumber && featureTime) {
       <span class="holter-card-time">{{ featureTime }}</span>
       }
       <span class="holter-card-name">{{ featureName }}</span>

@@ -1,0 +1,23 @@
+:host,
+holter-record-monitor-nav {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: space-around;
+  justify-content: space-around;
+  mat-toolbar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: stretch;
+    justify-content: space-between;
+    box-sizing: border-box;
+    .holter-record-nav-end {
+      display: flex;
+      flex-direction: row;
+      .holter-record-nav-upload {
+        margin-right: 16px;
+      }
+    }
+  }
+}

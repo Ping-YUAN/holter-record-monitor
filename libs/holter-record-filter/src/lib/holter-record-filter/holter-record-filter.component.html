@@ -1,5 +1,5 @@
-<form [formGroup]="patientForm">
-  <div>
+<div class="holter-record-patient-filter">
+  <form [formGroup]="patientForm">
     <mat-form-field>
       <mat-label>Patients</mat-label>
       <mat-select formControlName="patient" name="patient">
@@ -7,20 +7,48 @@
         @for (patient of patients; track patient.id) {
         <mat-option [value]="patient.id"
           >{{ patient.patientName }}
-          <mat-label>{{ !patient.read ? 'new' : '' }}</mat-label>
+          <mat-label class="holter-record-new-data">{{
+            !patient.read ? 'new' : ''
+          }}</mat-label>
         </mat-option>
         }
       </mat-select>
     </mat-form-field>
     @if (hasNewData) {
-    <mat-label>New Data Arrive!</mat-label>
+    <mat-label class="holter-record-new-data">New</mat-label>
     }
-  </div>
+  </form>
+</div>
+<div class="holter-record-time-filter">
+  <mat-checkbox (change)="switchTimeRange()"> Enable Filter </mat-checkbox>
 
-  <!--
-        other filter component can be loaded here 
-    -->
-  <mat-label style="right: 0px"
-    >Time range component to be implement here.</mat-label
+  <form
+    [formGroup]="dateForm"
+    [ngStyle]="{ visibility: showTimeRange() ? 'visible' : 'hidden' }"
   >
-</form>
+    <mat-form-field>
+      <mat-label>Date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="date" />
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <ngx-timepicker-field
+      [format]="24"
+      [defaultTime]="'12:00'"
+      formControlName="time"
+    ></ngx-timepicker-field>
+
+    <mat-form-field>
+      <mat-label>Duration</mat-label>
+      <mat-select formControlName="duration" name="duration">
+        @for (time of timeSlots; track time.value) {
+        <mat-option [value]="time.value">{{ time.name }} </mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+  </form>
+</div>

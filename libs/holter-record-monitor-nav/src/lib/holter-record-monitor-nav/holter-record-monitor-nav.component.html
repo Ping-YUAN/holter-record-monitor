@@ -2,4 +2,22 @@
   <div>
     <span>Holter Record Monitor</span>
   </div>
+
+  <div class="holter-record-nav-end">
+    <button
+      mat-flat-button
+      color="primary"
+      class="holter-record-nav-upload"
+      (click)="openUploadDialog()"
+    >
+      <mat-icon>upload_file</mat-icon>Upload
+    </button>
+    <mat-chip-set>
+      @if (connected()) {
+      <mat-chip color="primary">Connected</mat-chip>
+      } @else {
+      <mat-chip color="warn" (click)="reconnect()">Disconnected</mat-chip>
+      }
+    </mat-chip-set>
+  </div>
 </mat-toolbar>

@@ -1,5 +1,18 @@
 :host,
 holter-record-main-section {
-  display: flex;
-  flex-direction: row;
+  height: calc(100vh - 128px);
+  .holter-record-main-section {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    .holter-record-main-section-left {
+      display: flex;
+      flex-direction: column;
+      .holter-record-overview-cards {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+  }
 }

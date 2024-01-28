@@ -9,14 +9,17 @@ export class HolterInfoController {
   getHolterRecordSummaryByUserByTime(
     @Param('username') name: string,
     @Query('start') start?: number,
-    @Query('end') end?: number
+    @Query('end') end?: number,
+    @Query('low') low?: number,
+    @Query('high') high?: number
   ) {
     const summary = this.holterRecordService.getHolterRecordSummaryByUserByTime(
       name,
       start,
-      end
+      end,
+      low,
+      high
     );
-
     return summary;
   }
 }

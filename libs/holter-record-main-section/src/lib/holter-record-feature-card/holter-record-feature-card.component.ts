@@ -1,5 +1,5 @@
 /* eslint-disable @angular-eslint/component-selector */
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 
@@ -9,6 +9,7 @@ import { MatCardModule } from '@angular/material/card';
   imports: [CommonModule, MatCardModule],
   templateUrl: './holter-record-feature-card.component.html',
   styleUrl: './holter-record-feature-card.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HolterRecordFeatureCardComponent {
   @Input() featureName = '';

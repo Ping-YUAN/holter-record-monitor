@@ -18,11 +18,6 @@ export class HolterConnectionService {
   }
 
   sendUpdatedHolterData(holterRecords: HolterRecordUpdatedData[]) {
-    console.log(
-      `length of connection ${
-        this._connections.length
-      } data to send ${JSON.stringify(holterRecords)}`
-    );
     this._connections.forEach((connection) => {
       connection.send(JSON.stringify(holterRecords));
     });

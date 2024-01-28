@@ -17,13 +17,20 @@
     "baseUrl": ".",
     "paths": {
       "@holter-record-api": ["libs/holter-record-api/src/index.ts"],
+      "@holter-record-exception-list": [
+        "libs/holter-record-exception-list/src/index.ts"
+      ],
       "@holter-record-filter": ["libs/holter-record-filter/src/index.ts"],
+      "@holter-record-heart-rate-chart": [
+        "libs/holter-record-heart-rate-chart/src/index.ts"
+      ],
       "@holter-record-main-section": [
         "libs/holter-record-main-section/src/index.ts"
       ],
       "@holter-record-monitor-nav": [
         "libs/holter-record-monitor-nav/src/index.ts"
       ],
+      "@holter-record-upload": ["libs/holter-record-upload/src/index.ts"],
       "@holter-service": ["libs/holter-service/src/index.ts"]
     }
   },

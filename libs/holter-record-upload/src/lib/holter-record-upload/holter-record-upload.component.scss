@@ -1,0 +1,25 @@
+:host,
+holter-record-upload {
+  mat-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    form {
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+  }
+  mat-card-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .holter-record-upload-acctions {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+  }
+}

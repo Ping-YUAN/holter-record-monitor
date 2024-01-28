@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   HolterDataService,
@@ -6,17 +6,26 @@ import {
 } from '@holter-service';
 import { HolterRecordFeatureCardComponent } from '../holter-record-feature-card/holter-record-feature-card.component';
 import { Observable, map } from 'rxjs';
-
+import { HolterRecordExceptionListComponent } from '@holter-record-exception-list';
+import { HolterRecordHeartRateChartComponent } from '@holter-record-heart-rate-chart';
 @Component({
   // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'holter-record-main-section',
   standalone: true,
-  imports: [CommonModule, HolterRecordFeatureCardComponent],
+  imports: [
+    CommonModule,
+    HolterRecordFeatureCardComponent,
+    HolterRecordExceptionListComponent,
+    HolterRecordHeartRateChartComponent,
+  ],
   templateUrl: './holter-record-main-section.component.html',
   styleUrl: './holter-record-main-section.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HolterRecordMainSectionComponent implements OnInit {
   patientObservable$!: Observable<HolterRecordReadableSummary>;
+  exceptions = this.holterDataService.exceptionList;
+  history = this.holterDataService.heartRateHistory;
   constructor(private holterDataService: HolterDataService) {}
   ngOnInit(): void {
     this.patientObservable$ =
