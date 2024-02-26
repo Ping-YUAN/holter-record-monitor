@@ -23,6 +23,8 @@ The backend need three type of data:
 - start time. the start time of csv record time. Act as a base time for csv rows
 - csv file with columns order: type | waveOn | waveEnd | tags. waveOn/waveEnd is reprensent by milleseconds.
 
+example csv file [here](./asset/record.csv).
+
 csv file row example: QRS 7221 7316 junctional
 means QRS wave detected 7221 milleseconds after the data record starting
 and after (7316ms - 7221ms) = 95ms QRS wave finish.
